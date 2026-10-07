@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+
+# 데이터 — 수업·해커톤에서 제공받은 원본은 재배포하지 않음
+*.csv
+*.xlsx
+*.zip
+*.npy
+*.npz
+data/
+train/
+test/
+
+# 학습된 모델 가중치 (스크립트로 재생성 가능)
+*.pt
+*.pth
+*.h5
+*.pkl
+
+# 파이썬
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# 노드
+node_modules/
+
+# 비밀값
+.env

@@ -1,0 +1,46 @@
+mps
+label
+1    3875
+0    1341
+Name: count, dtype: int64
+train train_0001.png (224, 224)
+train train_0002.png (224, 224)
+train train_0003.png (224, 224)
+train train_0004.png (224, 224)
+train train_0005.png (224, 224)
+test  test_0001.png (1936, 1554)
+test  test_0002.png (1612, 941)
+test  test_0003.png (1528, 968)
+test  test_0004.png (904, 552)
+test  test_0005.png (1365, 1118)
+xray_improved.py:87: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+xray_improved.py:132: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+학습: 4172  검증: 1044
+Downloading: "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth" to ~/.cache/torch/hub/checkpoints/efficientnet_b0_rwightman-7f5810bc.pth
+
+  0%|          | 0.00/20.5M [00:00<?, ?B/s]
+ 13%|█▎        | 2.62M/20.5M [00:00<00:00, 25.1MB/s]
+ 39%|███▉      | 8.00M/20.5M [00:00<00:00, 42.5MB/s]
+ 61%|██████    | 12.4M/20.5M [00:00<00:00, 42.0MB/s]
+ 83%|████████▎ | 16.9M/20.5M [00:00<00:00, 43.8MB/s]
+100%|██████████| 20.5M/20.5M [00:00<00:00, 42.8MB/s]
+클래스 가중치: tensor([1.9441, 0.6731], device='mps:0')
+Epoch 1 | loss 0.2103 | val acc 0.9789
+Epoch 2 | loss 0.0939 | val acc 0.9751
+Epoch 3 | loss 0.0597 | val acc 0.9693
+Epoch 4 | loss 0.0569 | val acc 0.9789
+Epoch 5 | loss 0.0520 | val acc 0.9799
+Epoch 6 | loss 0.0362 | val acc 0.9847
+Epoch 7 | loss 0.0278 | val acc 0.9856
+Epoch 8 | loss 0.0315 | val acc 0.9828
+Epoch 9 | loss 0.0229 | val acc 0.9875
+Epoch 10 | loss 0.0246 | val acc 0.9875
+최고 검증 정확도: 0.9875478927203065
+검증 정확도: 0.9875478927203065
+[[263   5]
+ [  8 768]]
+xray_improved.py:255: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.xlabel("epoch"); plt.ylabel("val accuracy"); plt.show()
+test에서 폐렴으로 예측한 비율: 0.766 (train 폐렴 비율: 0.743 )

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>네이버 블로그 자동화</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>네이버 블로그 자동화</h1>
+    <div class="chips">
+      <button id="chip-naver" class="chip" title="네이버 로그인 상태">
+        <span class="dot"></span><span class="label">네이버 확인 중…</span>
+      </button>
+      <button id="chip-ai" class="chip" title="claude -p 연결 상태">
+        <span class="dot"></span><span class="label">AI 확인 중…</span>
+      </button>
+      <span id="chip-quota" class="chip static">오늘 발행 –</span>
+      <button id="btn-settings" class="chip static ghost">설정</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1단계 : 글감 -->
+    <section class="panel" id="panel-ideas">
+      <div class="panel-head">
+        <h2><span class="step">1</span> 글감 발굴</h2>
+        <div class="row">
+          <input id="topics" type="text" placeholder="관심분야 (쉼표로 구분) 예: 홈트레이닝, 단백질 보충제" />
+          <button id="btn-ideas" class="primary">글감 찾기</button>
+        </div>
+      </div>
+      <p class="hint">네이버 뉴스와 인기 블로그 글을 모아 AI가 지금 쓸 만한 주제를 골라냅니다.</p>
+      <div id="ideas" class="cards"></div>
+    </section>
+
+    <!-- 2단계 : 초안 검토 -->
+    <section class="panel" id="panel-draft" hidden>
+      <div class="panel-head">
+        <h2><span class="step">2</span> 초안 검토</h2>
+        <div class="row">
+          <button id="btn-reimage" class="ghost">이미지 다시 찾기</button>
+          <button id="btn-save" class="ghost">수정 저장</button>
+          <button id="btn-publish" class="primary">네이버에 발행</button>
+        </div>
+      </div>
+      <div id="draft-meta" class="meta"></div>
+      <div class="ask-row">
+        <input id="ask" type="text"
+               placeholder="AI에게 지시해서 섹션 추가 — 예: 각 지점 구간별 타임라인 넣어줘" />
+        <button id="btn-ask" class="ghost">섹션 추가</button>
+      </div>
+      <div class="presets" id="presets"></div>
+      <div id="draft" class="draft"></div>
+    </section>
+
+    <!-- 보관함 -->
+    <section class="panel" id="panel-posts">
+      <div class="panel-head">
+        <h2><span class="step">3</span> 보관함</h2>
+        <button id="btn-refresh-posts" class="ghost small">새로고침</button>
+      </div>
+      <div id="posts" class="posts"></div>
+    </section>
+  </main>
+
+  <!-- 실시간 로그 -->
+  <aside class="logs" id="logs-pane">
+    <div class="logs-head">
+      <span>진행 로그</span>
+      <button id="btn-clear-logs" class="ghost small">지우기</button>
+    </div>
+    <div id="logs"></div>
+  </aside>
+
+  <!-- 설정 모달 -->
+  <div class="modal" id="modal-settings" hidden>
+    <div class="modal-box">
+      <h3>설정</h3>
+      <label>내 블로그 아이디
+        <input id="s-blogId" placeholder="blog.naver.com/ 뒤에 오는 내 아이디" />
+      </label>
+      <label>발행 카테고리 (비우면 기본값)
+        <input id="s-category" placeholder="예: 운동일지" />
+      </label>
+      <label>내가 아는 사실 · 글쓰기 지시
+        <textarea id="s-notes" rows="4"
+          placeholder="수집 자료보다 우선합니다. 예: 무박 성중종주는 대피소에서 자지 않는다. 안내산악회 버스로 이동해 새벽 3시 산행 시작, 17시 전 종료 후 서울로 복귀."></textarea>
+      </label>
+      <div class="grid2">
+        <label>글 톤<input id="s-tone" /></label>
+        <label>목표 글자수<input id="s-targetLength" type="number" /></label>
+        <label>글감 개수<input id="s-ideaCount" type="number" /></label>
+        <label>분야당 수집 수<input id="s-sourcesPerTopic" type="number" /></label>
+        <label>글당 이미지 수<input id="s-imagesPerPost" type="number" /></label>
+        <label>하루 발행 한도<input id="s-dailyLimit" type="number" /></label>
+      </div>
+      <label>AI 모델
+        <select id="s-model">
+          <option value="sonnet">sonnet (빠름 · 여러 편 돌리기 좋음)</option>
+          <option value="opus">opus (글 품질 우선)</option>
+          <option value="haiku">haiku (가장 빠름)</option>
+        </select>
+      </label>
+      <fieldset>
+        <legend>이미지 소스</legend>
+        <label class="cb"><input type="checkbox" id="s-src-ai" /> AI 생성 삽화
+          <em class="warn">실제 사진 아님 — 캡션에 자동 표기됩니다</em>
+        </label>
+        <label class="cb"><input type="checkbox" id="s-src-stock" /> 무료 스톡 (Unsplash · Pexels) — 저작권 안전</label>
+        <label class="cb"><input type="checkbox" id="s-src-local" /> 로컬 폴더 <code>data/local-images/</code></label>
+        <label class="cb"><input type="checkbox" id="s-src-naver" /> 네이버 이미지 검색
+          <em class="warn">저작권 미확인 — 사용 전 출처를 직접 확인하세요</em>
+        </label>
+      </fieldset>
+      <div id="s-keys" class="hint"></div>
+      <div class="row end">
+        <button id="btn-logout" class="ghost danger">네이버 세션 삭제</button>
+        <button id="btn-close-settings" class="ghost">닫기</button>
+        <button id="btn-save-settings" class="primary">저장</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
