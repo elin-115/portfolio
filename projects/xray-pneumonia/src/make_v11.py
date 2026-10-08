@@ -4,7 +4,7 @@ a=s.index("# %% [markdown]\n# ## 0.")
 header='''# %% [markdown]
 # # 흉부 X-ray 폐렴 분류 — v11 (v10 + 에포크 늘리기)
 #
-# v10(검은 띠 제거 + 비율 흔들기)은 **모델 하나, 기준 0.5, 보정 없이** 리더보드 0.9183이 나왔습니다 (같은 조건의 v1은 0.8526).
+# v10(검은 띠 제거 + 비율 흔들기)을 v4 자리에 넣은 순위 평균 앙상블(v10+v5+v8+v9)은 리더보드 0.9183이었습니다.
 #
 # 그런데 v10의 검증(OOF) 결과를 보면 오답 방향이 바뀌었습니다.
 #
@@ -75,7 +75,7 @@ np.save("test_prob_v11.npy", test_prob)
 submission = pd.read_csv("sample_submission.csv")
 submission["label"] = (test_prob > 0.5).astype(int)        # 기준 0.5
 submission.to_csv("submission_v11_t05.csv", index=False)
-v10_sub = pd.read_csv("submission_v10_t05.csv")["label"]   # v10 제출 파일 (0.9183)
+v10_sub = pd.read_csv("submission_v10_t05.csv")["label"]   # v10 단독 예측 파일
 print(f"submission_v11_t05.csv: 폐렴 비율 {submission['label'].mean():.3f}, v10 파일과 다른 장수 {(submission['label'] != v10_sub).sum()}")
 '''
 open('xray_v11_epochs.py','w').write(s)
