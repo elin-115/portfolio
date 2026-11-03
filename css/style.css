@@ -97,6 +97,9 @@ code { font-size: .9em; padding: .1em .35em; border-radius: 4px; background: var
 .section--alt { background: var(--bg-alt); }
 .section__title { margin-bottom: 24px; font-size: 30px; font-weight: 800; letter-spacing: -.02em; }
 .section__lead { margin-bottom: 36px; color: var(--sub); }
+.about { max-width: 820px; }
+.about p + p { margin-top: 18px; }
+.about p { line-height: 1.85; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tags li { padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); color: var(--sub); font-size: 14px; }
@@ -323,12 +326,13 @@ code { font-size: .9em; padding: .1em .35em; border-radius: 4px; background: var
   html[data-print="resume"] #career { break-before: page; }
   html[data-print="portfolio"] .facts,
   html[data-print="portfolio"] #career,
+  html[data-print="portfolio"] #about,
   html[data-print="portfolio"] #etc,
   html[data-print="portfolio"] #links { display: none; }
   .info_list { gap: 2px 14px; margin-top: 6px; font-size: 9pt; }
   .summary tr { break-inside: avoid; }
 
   /* 영역이 페이지 경계에서 잘리지 않게 */
-  .chart, .diagram, .compare, .flow, .meta, .more, .points li, .project__summary, .stats, .facts, .timeline li, .list li, .links, .grid2 > div { break-inside: avoid; }
+  .chart, .diagram, .compare, .flow, .meta, .more, .points li, .project__summary, .stats, .facts, .timeline li, .list li, .links, .grid2 > div, .about p { break-inside: avoid; }
   .section__title, .project__title, .project__summary, .group, .eyebrow { break-after: avoid; }
 }
