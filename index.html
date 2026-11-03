@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>김지연 — 웹 · 백엔드 개발자</title>
+  <meta name="description" content="12년 차 웹 퍼블리셔에서 백엔드와 AI 서비스 개발로. 화면부터 서버, 모델 서빙과 배포까지 만듭니다.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문 바로가기</a>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="logo" href="#intro">김지연</a>
+      <nav class="gnb" aria-label="섹션 이동">
+        <ul>
+          <li><a href="#intro">Intro</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#career">Career</a></li>
+          <li><a href="#etc">Etc</a></li>
+          <li><a href="#links">Links</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ── Intro ── -->
+    <section id="intro" class="hero">
+      <div class="wrap">
+        <div class="hero__head">
+          <img class="hero__photo" src="images/profile.jpg" alt="김지연 프로필 사진" width="120" height="152">
+          <div>
+            <p class="eyebrow">Frontend · Backend · AI Service</p>
+            <h1 class="hero__name">김지연</h1>
+          </div>
+        </div>
+        <p class="hero__lead">12년 동안 UX/UI 중심으로 화면을 구현했고,<br>이제 데이터 분석과 백엔드를 익히며 <strong>화면 너머까지</strong> 넓혀 가고 있습니다.</p>
+        <p class="hero__desc">
+          다음·카카오를 비롯한 웹 서비스에서 퍼블리셔로 일했습니다.
+          부트캠프에서 FastAPI 백엔드와 Docker·AWS 배포, AI 모델 서빙을 배우며, 폐렴 환자 관리 백오피스에서 팀장으로 API 설계부터 배포까지 직접 해 봤습니다.
+          모델을 붙일 때는 점수가 믿을 만한지부터 확인합니다. 폐렴 모델이 폐가 아니라 사진의 검은 여백을 보고 있던 것도 그렇게 찾아냈습니다.
+        </p>
+
+        <ul class="stats">
+          <li><strong>12년</strong><span>웹 프론트엔드 실무</span></li>
+          <li><strong>팀장</strong><span>FastAPI 백오피스 · 4인</span></li>
+          <li><strong>0.89초</strong><span>AI 예측 API 응답</span></li>
+          <li><strong>AWS</strong><span>Docker · EC2 · nginx 배포</span></li>
+        </ul>
+
+        <ul class="tags" aria-label="주요 기술">
+          <li>HTML5 · CSS3</li><li>JavaScript</li><li>React</li><li>Node.js</li><li>Python</li>
+          <li>FastAPI</li><li>SQLAlchemy</li><li>Docker</li><li>AWS EC2</li><li>PyTorch</li>
+        </ul>
+
+        <dl class="facts">
+          <div><dt>Focus</dt><dd>화면과 서버, AI 기능을 하나로 이어 실제로 쓰이는 웹 서비스를 만드는 일</dd></div>
+          <div><dt>Strength</dt><dd>12년 웹 실무에서 익힌 사용자 화면 감각, 팀장으로 PR 리뷰와 배포까지 이끈 경험, 모델의 지름길을 찾아내는 검증 습관</dd></div>
+          <div><dt>Goal</dt><dd>의료 현장에서 믿고 쓸 수 있는 AI 서비스를 만드는 개발자</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ── Projects ── -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <h2 class="section__title">Projects</h2>
+        <ul class="featured">
+          <li>
+            <a href="#p-backoffice">
+              <span class="featured__tag">팀장 · 4인</span>
+              <strong>모델을 서비스에 붙이다</strong>
+              <span class="featured__name">폐렴 환자 관리 백오피스</span>
+              <span class="featured__num">4.8초 → 0.89초</span>
+              <span class="featured__desc">FastAPI 백엔드, AI 예측 서빙, AWS 배포</span>
+            </a>
+          </li>
+          <li>
+            <a href="#p-blog">
+              <span class="featured__tag">개인 · 사이드</span>
+              <strong>반복 작업을 웹앱으로 묶다</strong>
+              <span class="featured__name">네이버 블로그 자동화</span>
+              <span class="featured__num">글감 → 발행 7단계</span>
+              <span class="featured__desc">Node.js 서버 + Playwright, 사람이 검토하는 단계</span>
+            </a>
+          </li>
+          <li>
+            <a href="#p-xray">
+              <span class="featured__tag">개인 해커톤</span>
+              <strong>모델이 보던 지름길을 찾다</strong>
+              <span class="featured__name">흉부 X-ray 폐렴 분류</span>
+              <span class="featured__num">0.7804 → 0.9583</span>
+              <span class="featured__desc">백오피스에 실제로 서빙한 모델</span>
+            </a>
+          </li>
+        </ul>
+
+        <nav class="toc" aria-label="프로젝트 목록">
+          <ol>
+            <li><a href="#p-backoffice">폐렴 환자 관리 백오피스</a></li>
+            <li><a href="#p-blog">네이버 블로그 자동화</a></li>
+            <li><a href="#p-xray">흉부 X-ray 폐렴 분류</a></li>
+            <li><a href="#p-triage">재난현장 중증도 분류</a></li>
+            <li><a href="#p-infertility">난임 임신 성공 예측</a></li>
+            <li><a href="#p-credit">기술보증 대출 승인 예측</a></li>
+            <li><a href="#p-dur">DUR 금기 의약품 분석</a></li>
+          </ol>
+        </nav>
+
+        <h3 class="group">Development</h3>
+
+        <!-- 01 -->
+        <article id="p-backoffice" class="project">
+          <p class="eyebrow">Project 01 · Web Service · 팀장 (4인)</p>
+          <h3 class="project__title">폐렴 환자 관리 백오피스</h3>
+          <p class="project__summary">
+            흉부 X-ray 폐렴 판독 모델을 의료진용 백오피스에 붙인 웹 개발 PBL.
+            팀장으로 일정·분담·PR 리뷰를 맡고, 모델 서빙과 AWS 배포를 직접 했습니다.
+          </p>
+          <ul class="points">
+            <li>사용자·환자·진료기록·AI 예측 API를 단계별로 나누고, <strong>뼈대는 팀장이 만들고 나머지는 팀원 몫</strong>으로 분담해 모두의 기여가 남게 했습니다</li>
+            <li>main·develop에 PR 필수 규칙을 걸고 모든 PR을 리뷰한 뒤 머지했습니다. 리뷰 때 PR을 받아 실제 요청을 보내 보는 방식으로 프론트와 어긋난 필드를 미리 찾았습니다</li>
+            <li>응답 3초 제한 때문에 <strong>모델 15개(4.8초) 대신 3개(0.89초)</strong>로 서빙 구성을 줄였습니다. 최종 제출과 다른 판정은 624장 중 3장이었습니다</li>
+            <li>판독 근거를 보여 주는 Grad-CAM 히트맵을 0.15초 안에 만들어 결과와 함께 제공했습니다</li>
+            <li>Docker Hub 이미지 + EC2(Ubuntu) + nginx로 배포하고, 절차를 문서 9편으로 남겼습니다</li>
+          </ul>
+          <figure class="chart" aria-labelledby="c1">
+            <figcaption id="c1">예측 1건 응답 시간 (CPU 1장, 제한 3초)</figcaption>
+            <div class="bars bars--limit" style="--max: 5">
+              <div class="bar"><span class="bar__label">모델 15개</span><span class="bar__track"><span class="bar__fill is-bad" style="--v: 4.8"></span><span class="bar__limit" style="--v: 3" aria-hidden="true"></span></span><span class="bar__value">4.8초</span></div>
+              <div class="bar"><span class="bar__label">모델 3개</span><span class="bar__track"><span class="bar__fill is-good" style="--v: 0.89"></span><span class="bar__limit" style="--v: 3" aria-hidden="true"></span></span><span class="bar__value">0.89초</span></div>
+              <div class="bar"><span class="bar__label">히트맵</span><span class="bar__track"><span class="bar__fill" style="--v: 0.15"></span><span class="bar__limit" style="--v: 3" aria-hidden="true"></span></span><span class="bar__value">0.15초</span></div>
+            </div>
+          </figure>
+          <dl class="meta">
+            <div><dt>Role</dt><dd>팀장 · 설계 · AI 예측 서빙 · 배포</dd></div>
+            <div><dt>Period</dt><dd>2026.10 – 2026.11</dd></div>
+            <div><dt>Stack</dt><dd>FastAPI · SQLAlchemy · Alembic · PyTorch · Docker · AWS EC2 · nginx</dd></div>
+          </dl>
+        </article>
+
+        <!-- 02 -->
+        <article id="p-blog" class="project">
+          <p class="eyebrow">Project 02 · Web App · 개인 사이드</p>
+          <h3 class="project__title">네이버 블로그 자동화 — 글감부터 발행까지</h3>
+          <p class="project__summary">
+            관심분야만 넣으면 글감 발굴, 초안 작성, 이미지 매칭, 발행까지 이어지는 로컬 웹앱.
+            매번 손으로 하던 일을 단계별 파이프라인으로 나눴습니다.
+          </p>
+          <ul class="points">
+            <li>Node.js 서버와 웹 화면을 만들고, 수집·글감 선별·작성·이미지·발행을 <strong>모듈 15개</strong>로 나눴습니다</li>
+            <li>Playwright로 뉴스·인기 블로그를 수집하고, 스마트에디터에 서식까지 자동으로 입력합니다</li>
+            <li>AI가 이미지 파일을 직접 열어 0~100점으로 판정하고, 통과·탈락 사유를 검토 화면에 그대로 보여 줍니다</li>
+            <li>발행 직전에는 <strong>반드시 사람이 검토</strong>하게 했고, 하루 발행 한도·캡차 시 멈춤 등 계정 보호 장치를 넣었습니다</li>
+            <li>비밀번호는 다루지 않고 로그인 세션만 재사용하며, <code>npm run doctor</code>로 설치 상태를 점검하게 했습니다</li>
+          </ul>
+          <figure class="flow" aria-label="처리 흐름">
+            <ol>
+              <li>관심분야 입력</li><li>뉴스·블로그 수집</li><li>글감 선별</li><li>초안 작성</li><li>이미지 판정</li><li class="is-human">사람 검토</li><li>자동 발행</li>
+            </ol>
+          </figure>
+          <dl class="meta">
+            <div><dt>Period</dt><dd>2026.09</dd></div>
+            <div><dt>Stack</dt><dd>Node.js · Express · Playwright · Claude CLI</dd></div>
+            <div><dt>Code</dt><dd><a href="https://github.com/elin-115/portfolio/tree/main/projects/naver-blog-auto">projects/naver-blog-auto</a></dd></div>
+          </dl>
+        </article>
+
+        <h3 class="group">AI · Data</h3>
+
+        <!-- 03 -->
+        <article id="p-xray" class="project">
+          <p class="eyebrow">Project 03 · Computer Vision · 해커톤 (개인)</p>
+          <h3 class="project__title">흉부 X-ray 폐렴 분류 — 모델은 무엇을 보고 있었나</h3>
+          <p class="project__summary">
+            검증 정확도는 98.75%인데 리더보드는 0.90. 이 간극의 원인을 찾는 데 대부분의 시간을 썼습니다.
+          </p>
+          <ul class="points">
+            <li>폐를 전혀 보지 않고 <strong>사진의 가로세로 비율만으로 AUC 0.88</strong>이 나온다는 것을 찾았습니다. 모델은 "검은 여백이 두꺼우면 폐렴"을 배우고 있었습니다</li>
+            <li>여백을 잘라내는 전처리 후, 단서와 정답이 어긋나는 사진에서 정확도가 0.905 → 0.962로 올랐습니다</li>
+            <li>모델 넷을 섞어 0.9215였던 점수가 <strong>여백을 지운 모델 하나로 0.9471</strong>, 같은 전처리 모델 셋 평균으로 0.9583이 됐습니다</li>
+            <li>앙상블은 모델 수가 아니라 예측 간 상관으로 판단해야 한다는 것을 실패한 시도(v6)로 확인했습니다</li>
+          </ul>
+
+          <figure class="diagram">
+            <svg viewBox="0 0 560 200" role="img" aria-labelledby="d1t d1d">
+              <title id="d1t">letterbox 검은 여백 설명</title>
+              <desc id="d1d">정상 사진은 원본이 정사각형에 가까워 여백이 얇고, 폐렴 사진은 원본이 가로로 길어 위아래 검은 여백이 두껍다.</desc>
+              <g transform="translate(40,20)">
+                <rect width="160" height="160" class="d-frame"/>
+                <rect y="14" width="160" height="132" class="d-img"/>
+                <text x="80" y="86" class="d-txt">폐 사진</text>
+                <text x="80" y="182" class="d-cap">정상 — 여백 얇음</text>
+              </g>
+              <g transform="translate(240,20)">
+                <rect width="160" height="160" class="d-frame"/>
+                <rect y="40" width="160" height="80" class="d-img"/>
+                <text x="80" y="86" class="d-txt">폐 사진</text>
+                <text x="80" y="182" class="d-cap">폐렴 — 여백 두꺼움</text>
+              </g>
+              <g transform="translate(430,60)">
+                <text x="0" y="0" class="d-note">비율만으로</text>
+                <text x="0" y="28" class="d-big">AUC 0.88</text>
+                <text x="0" y="56" class="d-note">→ 지름길 학습</text>
+              </g>
+            </svg>
+            <figcaption>224×224로 맞추며 생긴 검은 여백(letterbox)의 두께가 정답과 함께 움직였습니다.</figcaption>
+          </figure>
+
+          <figure class="chart" aria-labelledby="c2">
+            <figcaption id="c2">리더보드 정확도 변화</figcaption>
+            <div class="bars" style="--min: 0.7; --max: 1">
+              <div class="bar"><span class="bar__label">baseline</span><span class="bar__track"><span class="bar__fill is-muted" style="--v: 0.7804"></span></span><span class="bar__value">0.7804</span></div>
+              <div class="bar"><span class="bar__label">4모델 앙상블</span><span class="bar__track"><span class="bar__fill is-muted" style="--v: 0.9215"></span></span><span class="bar__value">0.9215</span></div>
+              <div class="bar"><span class="bar__label">여백 제거 단일</span><span class="bar__track"><span class="bar__fill" style="--v: 0.9471"></span></span><span class="bar__value">0.9471</span></div>
+              <div class="bar"><span class="bar__label">여백 제거 3모델</span><span class="bar__track"><span class="bar__fill is-good" style="--v: 0.9583"></span></span><span class="bar__value">0.9583</span></div>
+            </div>
+          </figure>
+          <dl class="meta">
+            <div><dt>Period</dt><dd>2026.09 – 2026.10</dd></div>
+            <div><dt>Stack</dt><dd>PyTorch · TorchXRayVision · EfficientNet · DenseNet · ConvNeXt · Grad-CAM</dd></div>
+            <div><dt>Code</dt><dd><a href="https://github.com/elin-115/portfolio/tree/main/projects/xray-pneumonia">projects/xray-pneumonia</a> · 최종 보고서 12쪽</dd></div>
+          </dl>
+        </article>
+
+        <!-- 04 -->
+        <article id="p-triage" class="project">
+          <p class="eyebrow">Project 04 · Machine Learning · 팀 (5인)</p>
+          <h3 class="project__title">재난현장 다수사상자 중증도 분류</h3>
+          <p class="project__summary">
+            사상자가 한꺼번에 나온 현장에서 누구를 먼저 후송할지 가리는 문제. 데이터 분석과 후송 시간 분석을 맡았습니다.
+          </p>
+          <ul class="points">
+            <li>넣으면 정확도는 오르지만 현장에서는 알 수 없는, <strong>정답이 새어 든 칸 17개</strong>를 먼저 걷어냈습니다</li>
+            <li>대본 15종을 돌려 쓰는 가상 데이터라 분할 단위 4가지를 직접 비교해 템플릿 단위 교차검증을 택했습니다</li>
+            <li>정확도가 아니라 <strong>과소분류율</strong>을 1순위 지표로 두고, START 규칙과 XGBoost 중 더 위급한 쪽을 택하게 했습니다</li>
+            <li>가장 위급한 적색이 가장 늦게 출발한 원인이 인력이 아니라 출발 순서 규칙임을 시간 분석으로 밝혔습니다</li>
+          </ul>
+          <figure class="chart" aria-labelledby="c3">
+            <figcaption id="c3">과소분류율 (위급한 환자를 덜 위급하게 판정한 비율, 낮을수록 좋음)</figcaption>
+            <div class="bars" style="--max: 8">
+              <div class="bar"><span class="bar__label">START 규칙</span><span class="bar__track"><span class="bar__fill is-muted" style="--v: 6.32"></span></span><span class="bar__value">6.32%</span></div>
+              <div class="bar"><span class="bar__label">XGBoost</span><span class="bar__track"><span class="bar__fill is-muted" style="--v: 6.13"></span></span><span class="bar__value">6.13%</span></div>
+              <div class="bar"><span class="bar__label">규칙 + 모델</span><span class="bar__track"><span class="bar__fill is-good" style="--v: 2.04"></span></span><span class="bar__value">2.04%</span></div>
+            </div>
+          </figure>
+          <dl class="meta">
+            <div><dt>Result</dt><dd>과소분류 6.3% → 2.0%, 적색(최위급) 재현율 100%</dd></div>
+            <div><dt>Period</dt><dd>2026.09 – 2026.10</dd></div>
+            <div><dt>Stack</dt><dd>pandas · scikit-learn · XGBoost</dd></div>
+          </dl>
+        </article>
+
+        <!-- 05 -->
+        <article id="p-infertility" class="project">
+          <p class="eyebrow">Project 05 · Tabular ML · 해커톤 (개인) · 2위</p>
+          <h3 class="project__title">난임 환자 임신 성공 예측</h3>
+          <p class="project__summary">시술 기록 25만 건으로 임신 성공 여부를 예측했습니다.</p>
+          <ul class="points">
+            <li>같은 빈칸이 "해당 없음"과 "미기록" 두 뜻으로 들어온다는 것을 시술 유형(IVF / DI)별 결측률로 확인하고 갈라서 처리했습니다</li>
+            <li>8개 컬럼의 최댓값이 똑같이 51.0인 것을 보고 상한 캡핑을 찾아냈습니다</li>
+            <li>튜닝 효과는 +0.0004. <strong>성능을 가른 것은 모델 설정이 아니라 결측의 해석</strong>이었습니다</li>
+          </ul>
+          <dl class="meta">
+            <div><dt>Result</dt><dd>5-fold AUC 0.740 · 해커톤 2위</dd></div>
+            <div><dt>Period</dt><dd>2026.08 – 2026.09</dd></div>
+            <div><dt>Stack</dt><dd>pandas · XGBoost · Optuna</dd></div>
+          </dl>
+        </article>
+
+        <!-- 06 -->
+        <article id="p-credit" class="project">
+          <p class="eyebrow">Project 06 · Data Leakage · 개별 과제</p>
+          <h3 class="project__title">기술보증 대출 승인 예측 — "예측할 수 없다"는 결론</h3>
+          <ul class="points">
+            <li>"대출금액이 0이면 거부"라는 규칙 하나가 정확도 97.97%였습니다. <strong>대출금액은 심사의 입력이 아니라 결과</strong>입니다</li>
+            <li>이 변수를 빼자 AUC 0.47. 업력·기술등급·기술명 텍스트 모두 승인과 무관했습니다</li>
+            <li>좋은 모델을 만드는 대신, 이 데이터로는 만들 수 없다는 근거를 정리했습니다</li>
+          </ul>
+          <figure class="compare">
+            <div class="compare__item is-bad"><span class="compare__num">97.97%</span><span>누수 변수 포함 정확도</span></div>
+            <div class="compare__arrow" aria-hidden="true">→</div>
+            <div class="compare__item"><span class="compare__num">0.47</span><span>제거 후 AUC (무작위 수준)</span></div>
+          </figure>
+        </article>
+
+        <!-- 07 -->
+        <article id="p-dur" class="project">
+          <p class="eyebrow">Project 07 · NLP · 개별 과제</p>
+          <h3 class="project__title">DUR 금기 의약품 분석</h3>
+          <ul class="points">
+            <li>정의서에 설명이 없던 <code>제품수</code>가 성분 조합별 행 수임을 확인하고, 87만 행을 성분 단위로 재구성했습니다</li>
+            <li>p = 4.8e-38인데 중앙값은 양쪽이 같았습니다. 일괄 고시일에 몰려 생긴 착시였습니다</li>
+            <li>금기 사유 문장으로 등급을 분류하면 0.958, 정형 변수만 쓰면 0.567. 판별력은 텍스트에서 나왔습니다</li>
+          </ul>
+          <dl class="meta">
+            <div><dt>Stack</dt><dd>pandas · scikit-learn · gensim · Keras · konlpy</dd></div>
+          </dl>
+        </article>
+
+        <aside class="more">
+          <h3 class="more__title">그 밖의 작업</h3>
+          <ul>
+            <li><strong>헬스케어 개별 과제</strong> — TCCC 외상 응급처치 데이터 분석, 흡연 여부 건강검진 데이터 분석</li>
+            <li><strong>React 스터디</strong> — 실습 페이지 6종, React 19 · Vite · React Router · <a href="https://elin-115.github.io/react-study/">데모</a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ── Career ── -->
+    <section id="career" class="section section--alt">
+      <div class="wrap">
+        <h2 class="section__title">Career</h2>
+        <p class="section__lead">
+          다음·카카오에서 웹표준 마크업을 기초부터 익혔고, B2B·B2C 서비스를 두루 거쳤습니다.
+          팀원, 컨택 시니어, 모회사 파견, UI 파트장, 그리고 <strong>개발팀 내 유일 퍼블리셔</strong>로 여러 서비스를 동시에 맡았습니다.
+        </p>
+        <ol class="timeline">
+          <li>
+            <p class="timeline__date">2023.03 – 2025.12</p>
+            <h3>(주)인정보 <span>개발본부 수석연구원 · 유일 퍼블리셔</span></h3>
+            <p>홈페이지 유지보수·개편, 보안 솔루션 PrivacyFinder · Qator · IJB Gather · Watson 등 마크업</p>
+          </li>
+          <li>
+            <p class="timeline__date">2021.08 – 2023.01</p>
+            <h3>(주)스파크플러스 <span>개발팀 · 유일 퍼블리셔</span></h3>
+            <p>홈페이지 PC/Mobile 개편, 지점 예약 프로세스 개편, 라운지 예약 신규, 하이브리드앱 유지보수</p>
+          </li>
+          <li>
+            <p class="timeline__date">2020.05 – 2021.06</p>
+            <h3>(주)셀러허브 <span>UX/UI팀 과장 · 팀장</span></h3>
+            <p>셀러허브 PC/Mobile 개편, 어드민 UI 개편, 셀러딜 · 셀러허브샵 · 도매허브 신규 오픈</p>
+          </li>
+          <li>
+            <p class="timeline__date">2018.06 – 2020.04</p>
+            <h3>(주)마켓디자이너스 <span>UX LAB 파트장</span></h3>
+            <p>위매치다이사 반응형 통합, 위매치인테리어 · 위매치부동산 · 튜터링 신규 반응형 마크업</p>
+          </li>
+          <li>
+            <p class="timeline__date">2014.02 – 2017.06</p>
+            <h3>(주)디케이테크인 <span>UI개발팀 · 다음·카카오 서비스</span></h3>
+            <p>다음 뉴스·연예·스포츠 개편, 기사뷰·댓글 개편, 카카오쇼핑하기 · 카카오헤어샵 · 카카오주문하기 신규 오픈</p>
+          </li>
+          <li>
+            <p class="timeline__date">2013.12 – 2020.07</p>
+            <h3>프리랜서 <span>재직 병행</span></h3>
+            <p>현대오토에버, 오피스디포, 현대로지텍스, 롯데몰, 티킷 등 기업 사이트 개편</p>
+          </li>
+          <li class="timeline__prev">
+            <p class="timeline__date">2005.08 – 2012.05</p>
+            <h3>키움증권(주) <span>고객센터 파트장 → 본사 금융상품팀</span></h3>
+          </li>
+        </ol>
+        <ul class="tags tags--small" aria-label="웹 기술">
+          <li>HTML5</li><li>CSS3</li><li>SASS</li><li>jQuery</li><li>React</li><li>PHP</li>
+          <li>Git · GitHub</li><li>Figma</li><li>Zeplin</li><li>Sketch</li><li>Photoshop</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── Etc ── -->
+    <section id="etc" class="section">
+      <div class="wrap grid2">
+        <div>
+          <h2 class="section__title">Education</h2>
+          <ul class="list">
+            <li><span>2026.07 – 2027.01</span>OZ코딩스쿨 AI 헬스케어 7기</li>
+            <li><span>2000.03 – 2002.03</span>동양미래대학교 건축과 (중퇴)</li>
+            <li><span>1997.02 – 2000.02</span>영등포공업고등학교 건축과</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="section__title">Awards · Certificates</h2>
+          <ul class="list">
+            <li><span>2026.09</span>난임 임신 성공 예측 해커톤 2위</li>
+            <li><span>2010.02</span>파생상품투자상담사</li>
+            <li><span>2009.09</span>증권투자상담사</li>
+            <li><span>2009.03</span>증권펀드투자상담사</li>
+            <li><span>2006.11</span>간접투자증권 판매인력</li>
+            <li><span>1999.06</span>건축제도기능사</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Links ── -->
+    <section id="links" class="section section--alt">
+      <div class="wrap">
+        <h2 class="section__title">Links</h2>
+        <ul class="links">
+          <li><a href="https://github.com/elin-115/portfolio"><span>Portfolio repo</span>github.com/elin-115/portfolio</a></li>
+          <li><a href="https://github.com/elin-115"><span>GitHub</span>github.com/elin-115</a></li>
+          <li><a href="https://velog.io/@elin_jy/posts"><span>Blog</span>velog.io/@elin_jy</a></li>
+          <li><a href="mailto:j.yeon9919@gmail.com"><span>E-mail</span>j.yeon9919@gmail.com</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>수업·해커톤 데이터와 모델 가중치는 포함하지 않았습니다. 재난현장 데이터는 가상 데이터입니다.</p>
+      <p>© 2026 김지연</p>
+    </div>
+  </footer>
+</body>
+</html>
