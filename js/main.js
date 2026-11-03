@@ -31,16 +31,6 @@ window.addEventListener('afterprint', () => {
   document.title = pageTitle;
 });
 
-// 프로필 사진 크게 보기
-document.querySelectorAll('[data-dialog-open]').forEach((btn) => {
-  const dialog = document.getElementById(btn.dataset.dialogOpen);
-  btn.addEventListener('click', () => dialog.showModal());
-  dialog.addEventListener('click', (e) => {
-    // 바깥(배경)이나 닫기 버튼을 누르면 닫는다
-    if (e.target === dialog || e.target.closest('[data-dialog-close]')) dialog.close();
-  });
-});
-
 // ?print=resume / ?print=portfolio 로 열면 해당 PDF 구성으로 미리 맞춰 둔다 (링크로 바로 공유할 때)
 const printParam = new URLSearchParams(location.search).get('print');
 if (PDF_TITLE[printParam]) {

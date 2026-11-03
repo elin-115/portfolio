@@ -6,6 +6,7 @@
   <title>김지연 — 웹 · 백엔드 개발자</title>
   <meta name="description" content="12년 차 웹 퍼블리셔에서 백엔드와 AI 서비스 개발로. 화면부터 서버, 모델 서빙과 배포까지 만듭니다.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -14,7 +15,7 @@
 
   <header class="topbar">
     <div class="wrap topbar__inner">
-      <a class="logo" href="#intro">김지연</a>
+      <a class="logo" href="#intro">Kim Jiyeon</a>
       <button type="button" class="btn_menu" aria-expanded="false" aria-controls="gnb">
         <span class="blind">메뉴 열기</span><span class="btn_menu__bar" aria-hidden="true"></span>
       </button>
@@ -26,8 +27,8 @@
           <li><a href="#etc">Etc</a></li>
           <li><a href="#links">Links</a></li>
           <li class="gnb__pdf">
-            <button type="button" class="btn_pdf" data-print="resume">이력서 PDF</button>
-            <button type="button" class="btn_pdf" data-print="portfolio">포트폴리오 PDF</button>
+            <button type="button" class="btn_pdf" data-print="resume"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>이력서 PDF</button>
+            <button type="button" class="btn_pdf" data-print="portfolio"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>포트폴리오 PDF</button>
           </li>
         </ul>
       </nav>
@@ -39,19 +40,15 @@
     <section id="intro" class="hero">
       <div class="wrap">
         <div class="hero__head">
-          <button type="button" class="hero__photo-btn" data-dialog-open="photo-dialog" aria-label="프로필 사진 크게 보기">
-            <img class="hero__photo" src="images/profile.jpg" alt="김지연 프로필 사진" width="120" height="152">
-          </button>
-          <dialog id="photo-dialog" class="photo-dialog">
-            <img src="images/profile.jpg" alt="김지연 프로필 사진 확대" width="293" height="375">
-            <button type="button" class="photo-dialog__close" data-dialog-close>
-              <span class="blind">닫기</span><span aria-hidden="true">×</span>
-            </button>
-          </dialog>
+          <img class="hero__photo" src="images/profile.jpg" alt="김지연 프로필 사진" width="120" height="152">
           <div>
             <p class="eyebrow">Frontend · Backend · AI Service</p>
             <h1 class="hero__name">김지연</h1>
-            <p class="print-contact">j.yeon9919@gmail.com · github.com/elin-115 · elin-115.github.io/portfolio</p>
+            <ul class="info_list">
+              <li><a href="tel:010-5486-5442"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i><span class="blind">전화 </span>010-5486-5442</a></li>
+              <li><a href="mailto:j.yeon9919@gmail.com"><i class="fa-solid fa-at" aria-hidden="true"></i><span class="blind">이메일 </span>j.yeon9919@gmail.com</a></li>
+              <li><a href="https://github.com/elin-115" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i><span class="blind">깃허브 </span>github.com/elin-115</a></li>
+            </ul>
           </div>
         </div>
         <p class="hero__lead">12년 동안 UX/UI 중심으로 화면을 구현했고,<br>이제 데이터 분석과 백엔드를 익히며 <strong>화면 너머까지</strong> 넓혀 가고 있습니다.</p>
